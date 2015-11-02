@@ -1,0 +1,28 @@
+<h1>Support Requests</h1>
+<table border=1;>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+    <tbody>
+      <tr>
+        <% @s.each do |r| %>
+        <td><%= r.name %></td>
+        <td><%= mail_to r.email, r.email %></td>
+        <td><%= r.department %></td>
+        <td><%= r.message %></td>
+        <td><%= link_to "Edit", edit_supporter_path(r), class: "btn btn-info btn-sm"%>
+            <%= link_to("Delete", supporter_path(r), {method: :delete,
+                                                  class: "btn btn-danger btn-sm",
+                                                  data:   {confirm: "Are you sure?"}}) %>
+
+            <%= link_to "#{r.photo}", done_supporter_path(r), class: "btn btn-info btn-sm"%></td>
+
+      </tr>
+      <% end %>
+      </tbody>
+</table>

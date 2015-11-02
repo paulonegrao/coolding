@@ -1,0 +1,23 @@
+<h1>Support Request</h1>
+<table border=1;>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Message</th>
+      <th>Action</th>
+    </tr>
+    <tbody>
+      <tr>
+        <td><%= @s.name %></td>
+        <td><%= @s.email %></td>
+        <td><%= @s.department %></td>
+        <td><%= @s.message %></td>
+        <td><%= link_to "Edit", edit_supporter_path(@s), class: "btn btn-info btn-sm"%>
+            <%= link_to("Delete", supporter_path(@s), {method: :delete,
+                                          class: "btn btn-danger btn-sm",
+                                          data:   {confirm: "Are you sure?"}}) %></td>
+      </tr>
+      </tbody>
+</table>
