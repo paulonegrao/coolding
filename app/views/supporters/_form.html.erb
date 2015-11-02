@@ -4,11 +4,12 @@
 <div class="form-group">
     <%= f.label(:name) %>
     <%= f.text_field(:name, {class: "form-control"}) %>
-    <p class="help-block">Enter the Supporter's name</p>
+    <p class="help-block">Enter the Supporter's Name</p>
 </div>
 <div class="form-group">
    <%= f.label(:email) %>
    <%= f.text_field :email, class: "form-control" %>
+   <p class="help-block">Enter the Supporter's Email</p>
 </div>
 <div class="form-group">
     <%= f.label(:department, 'Sales', :value => 'sales', checked: true) %>
@@ -21,6 +22,7 @@
 <div class="form-group">
    <%= f.label(:message) %>
    <%= f.text_area :message, class: "form-control" %>
+   <p class="help-block">Enter the Message</p>
 </div>
 <%= f.submit({class: "btn btn-primary"}) %>
 <% end %>
